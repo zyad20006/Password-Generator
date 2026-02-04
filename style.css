@@ -5,11 +5,12 @@
 
 body{
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
     background-color:#f4f4f4;
+
 }
 .b-body{
     background-color: #0f172a;
@@ -116,6 +117,25 @@ height: 1rem;
 }
 #strength {
   transition: width 0.5s ease, background-color 0.5s ease;
+}
+
+table{
+    padding: .5rem;
+    margin-top: 1rem;
+display: flex;
+flex-direction: column;
+align-items: center;
+    border: 1px solid black;
+border-radius: 15px;
+}
+th{
+    border-bottom: 1px solid black;
+    font-size: larger;
+}
+
+
+td{
+        border-bottom: 1px solid black;
 }
 @media screen and (max-width:1024px){
    .container{

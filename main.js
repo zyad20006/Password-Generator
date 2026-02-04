@@ -7,15 +7,14 @@ var numlenght=document.querySelector('[class="num-lenght"]')
 let res=document.getElementById("result")
 let copied=document.getElementById("copy")
 let themes =document.getElementById("themes")
-
-console.log(res)
+var PasswordsContainer=[]
+var RPassords=document.getElementById("tbody")
 function getlenght(){
     var lenghtbar=Getlenghtinput.value
     numlenght.innerHTML=`${lenghtbar}`
 
 }
 function makePass(){
-    var ch=0;
     let upper = GetUpper.checked;
     let lower = GetLower.checked;
     let number = GetNumbers.checked;
@@ -37,15 +36,21 @@ function makePass(){
 
     for(let i = 0; i < lengthNum; i++){
         pass += chars[Math.floor(Math.random() * chars.length)];
-        ch++;
-        console.log(pass)
+        
     }
-    console.log(ch)
      
 res.innerHTML = `<p>${pass}</p>`;
+  PasswordsContainer.push(pass);
 
+  localStorage.setItem("passwords", JSON.stringify(PasswordsContainer));
+console.log(PasswordsContainer)
+if(PasswordsContainer.length>10){
+    PasswordsContainer.splice(0,1)
+  localStorage.setItem("passwords", JSON.stringify(PasswordsContainer));
+    
+}
 strength()
-
+ShowPass()
 }
 
 function copyText(button) {
@@ -106,4 +111,18 @@ if(strengthlenght===4)
     strength.style.width='100%'
     strength.style.background=`${colors[3]}`
 }
+}
+function ShowPass(){
+    var x=``;
+    for(var i=0;i<PasswordsContainer.length;i++)
+    {
+        x+=`<tr> 
+
+  <td>${PasswordsContainer[i]}</td>
+
+     </tr> `
+    }
+
+
+RPassords.innerHTML=x
 }

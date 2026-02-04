@@ -41,19 +41,27 @@
           <input type="checkbox" id="Schar" />
         </div>
       </div>
-      
+
       <div class="pass">
         <button onclick="makePass()">Generat password</button>
-        <div class="strength" >
-        <div class="strengthbar"id="strength" ></div>
-      </div>
+        <div class="strength">
+          <div class="strengthbar" id="strength"></div>
+        </div>
         <div class="final">
           <div id="result" class="result"></div>
           <button type="" onclick="copyText(this)" id="copy">Copy</button>
         </div>
       </div>
-      
     </div>
+    <table>
+      <thead>
+        <th>Recent Password</th>
+      </thead>
+      <tbody id="tbody">
+
+      </tbody>
+    </table>
+
     <script src="main.js"></script>
   </body>
 </html>
