@@ -43,7 +43,6 @@ res.innerHTML = `<p>${pass}</p>`;
   PasswordsContainer.push(pass);
 
   localStorage.setItem("passwords", JSON.stringify(PasswordsContainer));
-console.log(PasswordsContainer)
 if(PasswordsContainer.length>10){
     PasswordsContainer.splice(0,1)
   localStorage.setItem("passwords", JSON.stringify(PasswordsContainer));
@@ -63,7 +62,6 @@ copied.innerHTML='copied';
    
 }
 function switchThemes(){
-console.log("skmd")
     if(themes.innerHTML==='<p>press to change to Dark</p>')
     {
 document.body.classList.add("b-body")
