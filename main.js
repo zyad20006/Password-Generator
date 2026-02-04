@@ -15,6 +15,7 @@ function getlenght(){
 
 }
 function makePass(){
+    var ch=0;
     let upper = GetUpper.checked;
     let lower = GetLower.checked;
     let number = GetNumbers.checked;
@@ -36,8 +37,11 @@ function makePass(){
 
     for(let i = 0; i < lengthNum; i++){
         pass += chars[Math.floor(Math.random() * chars.length)];
+        ch++;
+        console.log(pass)
     }
-    
+    console.log(ch)
+     
 res.innerHTML = `<p>${pass}</p>`;
 
 strength()
