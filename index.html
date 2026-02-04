@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>password Generator</title>
+  </head>
+  <body>
+    <div class="container w-container">
+      <div class="toggle" onclick="switchThemes()" id="themes">
+        <p>press to change to Dark</p>
+      </div>
+      <h1>password Generator</h1>
+
+      <div class="row">
+        <label for="Lenght"> password Lenght:</label>
+        <div class="w-lenght">
+          <input
+            type="range"
+            min="6"
+            max="40"
+            value="12"
+            id="Lenght"
+            oninput="getlenght()"
+          />
+          <div class="num-lenght">12</div>
+        </div>
+      </div>
+      <div class="checkBoxs">
+        <div class="labels">
+          <label for="UCase">Upper Case</label>
+          <label for="LCase">Lower Case</label>
+          <label for="num">Numbers</label>
+          <label for="Schar">Spicial Charactar</label>
+        </div>
+        <div class="inputs">
+          <input type="checkbox" id="UCase" />
+          <input type="checkbox" id="LCase" />
+          <input type="checkbox" id="num" />
+          <input type="checkbox" id="Schar" />
+        </div>
+      </div>
+      
+      <div class="pass">
+        <button onclick="makePass()">Generat password</button>
+        <div class="strength" >
+        <div class="strengthbar"id="strength" ></div>
+      </div>
+        <div class="final">
+          <div id="result" class="result"></div>
+          <button type="" onclick="copyText(this)" id="copy">Copy</button>
+        </div>
+      </div>
+      
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
