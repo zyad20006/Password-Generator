@@ -68,6 +68,8 @@ document.body.classList.add("b-body")
     document.getElementsByClassName('container')[0].classList.remove("w-container");
     document.getElementsByClassName('container')[0].classList.add("b-container");
     themes.innerHTML='<p>press to change to light</p>'
+    RPassords.style.classList.add("b-container")
+
     }else{
         document.body.classList.remove("b-body")
     document.getElementsByClassName('container')[0].classList.add("w-container");
@@ -116,7 +118,9 @@ function ShowPass(){
     {
         x+=`<tr> 
 
-  <td>${PasswordsContainer[i]}</td>
+  <td style="        color: rgb(132, 132, 136);
+
+">${PasswordsContainer[i]}</td>
 
      </tr> `
     }
